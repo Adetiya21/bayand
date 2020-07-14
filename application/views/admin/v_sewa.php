@@ -150,7 +150,7 @@
               },
               defaultContent: 'Status'
             
-    	},
+      	},
         {"data": "view","orderable": false}
         ],
         order: [[1, 'asc']],

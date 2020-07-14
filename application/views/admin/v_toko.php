@@ -51,7 +51,7 @@
                             <div class="card-header-right"> <ul class="list-unstyled card-option"> <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li> <li><i class="feather icon-maximize full-card"></i></li> <li><i class="feather icon-minus minimize-card"></i></li> <li><i class="feather icon-refresh-cw reload-card"></i></li> <li><i class="feather icon-trash close-card"></i></li> <li><i class="feather icon-chevron-left open-card-option"></i></li> </ul> </div>
                         </div>
                         <div style="position: absolute;right: 20px; top: 15px;">
-                            <button class="btn btn-primary btn-round" onclick="hapus('T1P8')"><span class="fa fa-edit"></span> hapus</button>   
+                            <button class="btn btn-primary btn-round" onclick="tambah()"><span class="fa fa-edit"></span> Tambah Data</button>   
                         </div>
                         
                         <div class="card-block">
