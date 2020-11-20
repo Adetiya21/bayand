@@ -18,7 +18,7 @@
 					<i class="feather icon-layout bg-c-blue"></i>
 					<div class="d-inline">
 						<h5>Officer</h5>
-						<span>Berikut data officer sewa teras Indomaret.</span>
+						<span>Berikut daftar officer sewa teras Indomaret.</span>
 					</div>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 							<a href="<?= site_url('admin/officer') ?>">Officer</a>
 						</li>
 						<li class="breadcrumb-item">
-							<a href="<?= site_url('admin/officer') ?>">Data officer</a>
+							<a href="<?= site_url('admin/officer') ?>">Daftar officer</a>
 						</li>
 					</ul>
 				</div>
@@ -46,7 +46,7 @@
 				<div class="page-body">
 					<div class="card">
 						<div class="card-header">
-							<h5>Data Officer</h5>
+							<h5>Daftar Officer</h5>
                             <div class="card-header-right"> <ul class="list-unstyled card-option"> <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li> <li><i class="feather icon-maximize full-card"></i></li> <li><i class="feather icon-minus minimize-card"></i></li> <li><i class="feather icon-refresh-cw reload-card"></i></li> <li><i class="feather icon-trash close-card"></i></li> <li><i class="feather icon-chevron-left open-card-option"></i></li> </ul> </div>
 						</div>
 						<div style="position: absolute;right: 20px; top: 15px;">

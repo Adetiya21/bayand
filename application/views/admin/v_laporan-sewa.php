@@ -66,7 +66,8 @@
 								<table id="compact" class="myCanvas table table-bordered table-hover nowrap table-responsive" width="100%">
 									<thead>
 										<tr><th width="1%">No</th>
-										<th>KD.TK</th>
+										<th>Tanggal Selesai</th>
+                                        <th>KD.TK</th>
 										<th>Nama Toko</th>
 					                    <th>Alamat</th>
 					                    <th>Nama Penyewa</th>
@@ -132,6 +133,7 @@
             "data": "id",
             "orderable": false
         },
+        {"data": "tglselesai"},
         {"data": "kd_toko1"},
         {"data": "nama_toko"},
         {"data": "at"},

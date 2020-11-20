@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/') ?>bower_components/jquery.steps/css/jquery.steps.css">
+<link rel="stylesheet" type="text/css" href="<?= base_url('assets/') ?>bower_components/select2/css/select2.min.css" />
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/') ?>assets/css/style.css">
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -58,6 +60,7 @@
 		<div class="main-body">
 			<div class="page-wrapper">
 				<div class="page-body">
+					
 					<div class="card">
 						<div class="card-header">
 							<h5>Input Pengajuan Sewa Teras</h5>
@@ -120,15 +123,16 @@
 													<label for="name-2" class="block">Toko Yang Diminati</label>
 												</div>
 												<div class="col-md-6 col-lg-8">
-													<select class="form-control select2"  name="kd_toko" style="width: 100%;"  onchange="changeValue(this.value)">
+													<select class="form-control js-example-basic-single"  name="kd_toko" style="width: 100%;"  onchange="changeValue(this.value)">
 														<option>Pilih Toko</option>
 														<?php 
 														$jsArray = "var dtToko = new Array();\n";    
 														foreach ($toko->result() as $key) {
+															if($key->kouta_sewa!=0){
 											                ?>
 											                <option value="<?= $key->kd_toko ?>"><?= $key->nama_toko ?></option>
 											                <?php $jsArray .= "dtToko['" . $key->kd_toko . "'] = {alamat_toko:'" . addslashes($key->alamat_toko) . "',harga_sewa:'".addslashes($key->harga_sewa)."'};\n"; ?>
-										                <?php } ?>		
+										                <?php }} ?>		
 													</select>
 												</div>
 											</div>
@@ -164,8 +168,8 @@
 											</div>
 											<div class="form-group row">
 												<div class="col-md-6 col-lg-4">
-													<label for="phone-2" class="block">Jangka Waktu Sewa</label>
-													<span class="block">*Bulan</span>
+													<label for="phone-2" class="block">Jangka Waktu Sewa</label><br>
+													<span class="block" style="font-size: 0.8em">*Bulan</span>
 												</div>
 												<div class="col-md-2 col-lg-2">
 													<input id="jangka_sewa" name="jangka_sewa" type="number" class="form-control required phone" maxlength="3" onkeypress='return check_int(event)' onchange="changeValue1(this.value)">
@@ -182,7 +186,8 @@
 											</div>	
 											<div class="form-group row">
 												<div class="col-md-6 col-lg-4">
-													<label for="surname-2" class="block">Total Biaya</label>
+													<label for="surname-2" class="block">Total Biaya</label><br>
+													<span class="block" style="font-size: 0.8em">*Total biaya bisa berubah sewaktu-waktu</span>
 												</div>
 												<div class="col-md-6 col-lg-8">
 													<div class="input-group">
@@ -298,12 +303,16 @@
 	function changeValue1(item) {
 		var tanggal = document.getElementById("date").value.substr(8,2);
 		var bulan = document.getElementById("date").value.substr(5,2);
-		var tahun = document.getElementById("date").value.substr(0,4);
+		var tahun = parseInt(document.getElementById("date").value.substr(0,4));
 		var js = parseInt($("#jangka_sewa").val());
 		var bln = parseInt(bulan);
 		var bln2 = bln + js;
-		var strDtTransSt1 = "25" + "/" + bln2 + "/" + tahun;
-		var strDtTransSt = tahun+"-"+bln2+"-"+"25";
+		if (bln2>12) {
+			bln2=bln2-12;
+			tahun=tahun+1;
+		}
+		var strDtTransSt1 = tanggal + "/" + bln2 + "/" + tahun;
+		var strDtTransSt = tahun+"-"+bln2+"-"+tanggal;
 		$("#jumlahbulan").val(strDtTransSt);
 		$("#jumlahbulan1").val(strDtTransSt1);
 		
@@ -318,6 +327,7 @@
         $("#totbiaya").val(ribuan); 
 	}
 </script>
+<script type="97be7cdfcecf49a1b2c1a141-text/javascript" src="<?= base_url('assets/') ?>bower_components/select2/js/select2.full.min.js"></script>
 
 <script type="0c02f9e383c53a06f1a03b30-text/javascript" src="<?= base_url('assets/') ?>bower_components/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <script type="0c02f9e383c53a06f1a03b30-text/javascript" src="<?= base_url('assets/') ?>assets/pages/advance-elements/bootstrap-datetimepicker.min.js"></script>

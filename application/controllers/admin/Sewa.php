@@ -130,7 +130,6 @@ class Sewa extends CI_Controller {
 		$tgl_sewa = $this->input->post('tgl_sewa');
         $tgl_sewa = date('Y-m-d', strtotime($tgl_sewa));
         $tgl_selesai = $this->input->post('tgl_selesai');
-        $tgl_selesai = date('Y-d-m', strtotime($tgl_selesai));
 		$data = array(
 			'id_pendaftar' => $this->input->post('id_pendaftar'),
 			'kd_toko' => $this->input->post('kd_toko'),
@@ -151,6 +150,17 @@ class Sewa extends CI_Controller {
 		}
 		
 		$this->DButama->UpdateDB($this->table,$where,$data);
+
+		if(($this->input->post('status')=="Selesai") || ($this->input->post('status')=="Ditolak")) {
+			$where  = array('kd_toko' => $row->kd_toko);
+			$query = $this->DButama->GetDBWhere('tb_toko',$where);
+			$row1 = $query->row();
+			$data = array(
+				'kouta_sewa' => $row1->kouta_sewa+1
+			);
+			$this->DButama->UpdateDB('tb_toko',$where,$data);
+		}
+		
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<strong>Data pengajuan sewa sudah diperbaharui</strong> 

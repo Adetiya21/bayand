@@ -19,7 +19,7 @@
 					<i class="feather icon-layout bg-c-blue"></i>
 					<div class="d-inline">
 						<h5>Toko</h5>
-						<span>Berikut data toko sewa teras Indomaret.</span>
+						<span>Berikut daftar toko sewa teras Indomaret.</span>
 					</div>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
 							<a href="<?= site_url('toko') ?>">Toko</a>
 						</li>
 						<li class="breadcrumb-item">
-							<a href="<?= site_url('toko') ?>">Data Toko</a>
+							<a href="<?= site_url('toko') ?>">Daftar Toko</a>
 						</li>
 					</ul>
 				</div>
@@ -47,7 +47,7 @@
 				<div class="page-body">
 					<div class="card">
 						<div class="card-header">
-							<h5>Data Toko</h5>
+							<h5>Daftar Toko</h5>
 							<div class="card-header-right"> <ul class="list-unstyled card-option"> <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li> <li><i class="feather icon-maximize full-card"></i></li> <li><i class="feather icon-minus minimize-card"></i></li> <li><i class="feather icon-refresh-cw reload-card"></i></li> <li><i class="feather icon-trash close-card"></i></li> <li><i class="feather icon-chevron-left open-card-option"></i></li> </ul> </div>
 						</div>
 						<div class="card-block">
@@ -59,6 +59,7 @@
 										<th>Nama Toko</th>
 										<th>Alamat Toko</th>
 										<th>Harga Sewa</th>
+										<th>Kouta Sewa</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -122,6 +123,7 @@
         {"data": "nama_toko"},
         {"data": "alamat_toko"},
         {"data": "harga_sewa"},
+		{"data": "kouta_sewa"},
         ],
         order: [[1, 'asc']],
         rowCallback: function(row, data, iDisplayIndex) {

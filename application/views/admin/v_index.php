@@ -221,7 +221,7 @@
 											</div>
 										</div>
 										<div class="col-xl-3 col-md-6">
-											<div class="">
+											<div class="pp-cont">
 												<div class="row align-items-center m-b-20">
 													<div class="col-auto">
 														<i class="fas fa-check f-24 text-mute"></i>

@@ -112,11 +112,23 @@ class Sewa extends CI_Controller {
 			$query = $this->DButama->GetDBWhere($this->table,$where);
 			$row = $query->row();
 			$data = array(
-					'id_officer' => $this->input->post('id_officer'),
-					'status' => $this->input->post('status')
+				'id_officer' => $this->input->post('id_officer'),
+				'status' => $this->input->post('status'),
+				't_biaya' => $this->input->post('t_biaya'),
+				'keterangan' => $this->input->post('keterangan')
+			);
+			$this->DButama->UpdateDB($this->table,$where,$data);
+
+			if(($this->input->post('status')=="Selesai") || ($this->input->post('status')=="Ditolak")) {
+				$where  = array('kd_toko' => $row->kd_toko);
+				$query = $this->DButama->GetDBWhere('tb_toko',$where);
+				$row1 = $query->row();
+				$data = array(
+					'kouta_sewa' => $row1->kouta_sewa+1
 				);
-				$this->DButama->UpdateDB($this->table,$where,$data);
-				echo json_encode(array("status" => TRUE));	
+				$this->DButama->UpdateDB('tb_toko',$where,$data);
+			}
+			echo json_encode(array("status" => TRUE));	
 		}
 	}
 

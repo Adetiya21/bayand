@@ -57,7 +57,8 @@ class Toko extends CI_Controller {
 					'kd_toko' => $this->input->post('kd_toko'),
 					'nama_toko' => $this->input->post('nama_toko'),
 					'alamat_toko' => $this->input->post('alamat_toko'),
-					'harga_sewa' => $this->input->post('harga_sewa')
+					'harga_sewa' => $this->input->post('harga_sewa'),
+					'kouta_sewa' => $this->input->post('kouta_sewa')
 				);
 				$this->DButama->AddDB($this->table,$data);
 				echo json_encode(array("status" => TRUE));
@@ -99,7 +100,8 @@ class Toko extends CI_Controller {
 					'alamat_toko' => $this->input->post('alamat_toko'),
 					'a_s' => $this->input->post('a_s'),
 					'a_m' => $this->input->post('a_m'),
-					'harga_sewa' => $this->input->post('harga_sewa')
+					'harga_sewa' => $this->input->post('harga_sewa'),
+					'kouta_sewa' => $this->input->post('kouta_sewa')
 				);
 				$this->DButama->UpdateDB($this->table,$where,$data);
 				echo json_encode(array("status" => TRUE));

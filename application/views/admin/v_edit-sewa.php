@@ -202,7 +202,8 @@
 													<label for="surname-2" class="block">Tanggal Selesai</label>
 												</div>
 												<div class="col-md-6 col-lg-8">
-													<input id="jumlahbulan" type="text" class="form-control" name="tgl_selesai" value="<?= $sewa->tgl_selesai ?>" readonly>
+													<input id="jumlahbulan" type="hidden" name="tgl_selesai" >
+													<input id="jumlahbulan1" type="text" class="form-control" value="<?= $sewa->tgl_selesai ?>" readonly>
 												</div>
 											</div>	
 											<div class="form-group row">
@@ -362,14 +363,21 @@
 	function changeValue1(item) {
 		var tanggal = document.getElementById("date").value.substr(8,2);
 		var bulan = document.getElementById("date").value.substr(5,2);
-		var tahun = document.getElementById("date").value.substr(0,4);
+		var tahun = parseInt(document.getElementById("date").value.substr(0,4));
 		var js = parseInt($("#jangka_sewa").val());
 		var bln = parseInt(bulan);
 		var bln2 = bln + js;
-		var strDtTransSt = "25" + "/" + bln2 + "/" + tahun;
+		var bln = parseInt(bulan);
+		var bln2 = bln + js;
+		if (bln2>12) {
+			bln2=bln2-12;
+			tahun=tahun+1;
+		}
+		var strDtTransSt1 = tanggal + "/" + bln2 + "/" + tahun;
+		var strDtTransSt = tahun+"-"+bln2+"-"+tanggal;
 		$("#jumlahbulan").val(strDtTransSt);
+		$("#jumlahbulan1").val(strDtTransSt1);
 		
-
 		var angka1  = parseInt($("#harga_sewa").val());
         var hasil = angka1 * js;
         $("#totalbiaya").val(hasil); 

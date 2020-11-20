@@ -155,7 +155,7 @@
     	},
         {"data": "view","orderable": false}
         ],
-        order: [[1, 'asc']],
+        order: [[1, 'desc']],
         rowCallback: function(row, data, iDisplayIndex) {
             var info = this.fnPagingInfo();
             var page = info.iPage;
@@ -280,7 +280,7 @@
           /* you should do some validation of theResponse here too */
           $('#csrfHash').val(theResponse);;
       });
-    }
+    };
 </script>
 
 <!--modal tambah dan edit -->
@@ -301,12 +301,34 @@
                           <div class="col-md-12">
                             <div class="form-group">
                                 <label >Status</label>
-                                <select name="status" class="form-control">
+                                <select name="status" class="form-control" id="test">
                                   <option value="Menunggu">Menunggu</option>
                                   <option value="Diterima">Diterima</option>
                                   <option value="Ditolak">Ditolak</option>
                                   <option value="Selesai">Selesai</option>
                                 </select>
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="form-group" id="hidden_div1" style="display: none;">
+                                <label >Tambahan Biaya</label>
+                                <select name="t_biaya" class="form-control">
+                                  <option value="0">0</option>
+                                  <option value="100000">Rp 100.000</option>
+                                  <option value="200000">Rp 200.000</option>
+                                  <option value="300000">Rp 300.000</option>
+                                  <option value="400000">Rp 400.000</option>
+                                  <option value="500000">Rp 500.000</option>
+                                  <option value="600000">Rp 600.000</option>
+                                  <option value="700000">Rp 700.000</option>
+                                  <option value="800000">Rp 800.000</option>
+                                  <option value="900000">Rp 900.000</option>
+                                  <option value="1000000">Rp 1000.000</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="form-group" id="hidden_div2" style="display: none;">
+                                <label >Keterangan</label>
+                                <textarea class="form-control" name="keterangan"></textarea>
                                 <span class="help-block"></span>
                             </div>
                           </div>
@@ -325,3 +347,17 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script type="text/javascript">
+    document.getElementById('test').addEventListener('change', function () {
+        var style = this.value == 'Diterima' ? 'block' : 'none';
+        document.getElementById('hidden_div1').style.display = style;
+    });
+</script>
+
+<script type="text/javascript">
+    document.getElementById('test').addEventListener('change', function () {
+        var style = this.value == 'Ditolak' ? 'block' : 'none';
+        document.getElementById('hidden_div2').style.display = style;
+    });
+</script>

@@ -57,6 +57,7 @@ class M_sewa extends CI_Model {
 		$this->datatables->select('tb_sewa.id,
 			tb_sewa.id_pendaftar,
 			tb_sewa.kd_toko as kd_toko1,
+			tb_sewa.tgl_selesai as tglselesai,
 			CONCAT(tb_sewa.tgl_sewa," --- ",tb_sewa.tgl_selesai) as tgl,
 			CONCAT(tb_sewa.jangka_sewa," Bulan ") as js,			
 			tb_sewa.produk_jual as prjual,

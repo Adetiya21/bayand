@@ -136,10 +136,14 @@
 									<label class="col-sm-8 col-form-label" style="margin-bottom: -30px; font-size:0.9em;">: <b style="font-weight: bold;"><?= $sewa->tgl_selesai ?></b></label>
 								</div>
 								<div class="form-group row">
-									<label class="col-sm-4 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">Biaya Sewa Perbulan</label>
+									<label class="col-sm-4 col-form-label" style="margin-bottom: -30px; font-size:0.9em;">Biaya Sewa Perbulan</label>
 									<?php foreach ($toko->result() as $key) { if ($sewa->kd_toko == $key->kd_toko) { ?>
-									<label class="col-sm-8 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $key->harga_sewa ?></b></label>
+									<label class="col-sm-8 col-form-label" style="margin-bottom: -30px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $key->harga_sewa ?></b></label>
 									<?php }} ?>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-4 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">Biaya Tambahan</label>									
+									<label class="col-sm-8 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $sewa->t_biaya ?></b></label>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-4 col-form-label" style="margin-bottom: -5px; font-size:0.9em;">Total Biaya Sewa</label>
@@ -160,6 +164,16 @@
 							
 							<h4 style="margin-top: 20px;" class="sub-title">LAIN-LAIN</h4>
 							<div class="form-group row">
+								<div class="col-md-12">
+									<div class="form-group row">
+										<div class="col-md-4">
+											<label for="University-2" class="block">Keterangan Terkait Status</label>
+										</div>
+										<div class="col-md-8">
+											: <b style="font-weight: bold"><?= $sewa->keterangan ?></b>
+										</div>
+									</div>
+								</div>
 								<div class="col-md-6">
 									<div class="form-group row">
 										<div class="col-md-12">

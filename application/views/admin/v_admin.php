@@ -13,7 +13,7 @@
 					<i class="feather icon-command bg-c-blue"></i>
 					<div class="d-inline">
 						<h5>Admin</h5>
-						<span>Berikut data admin website.</span>
+						<span>Berikut daftar admin website.</span>
 					</div>
 				</div>
 			</div>
@@ -27,7 +27,7 @@
 							<a href="<?= site_url('admin/admin') ?>">Admin</a>
 						</li>
 						<li class="breadcrumb-item">
-							<a href="<?= site_url('admin/admin') ?>">Data Admin</a>
+							<a href="<?= site_url('admin/admin') ?>">Daftar Admin</a>
 						</li>
 					</ul>
 				</div>
@@ -41,7 +41,7 @@
 				<div class="page-body">
 					<div class="card">
 						<div class="card-header">
-							<h5>Data Admin</h5>
+							<h5>Daftar Admin</h5>
                             <div class="card-header-right"> <ul class="list-unstyled card-option"> <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li> <li><i class="feather icon-maximize full-card"></i></li> <li><i class="feather icon-minus minimize-card"></i></li> <li><i class="feather icon-refresh-cw reload-card"></i></li> <li><i class="feather icon-trash close-card"></i></li> <li><i class="feather icon-chevron-left open-card-option"></i></li> </ul> </div>
 						</div>
 						<div style="position: absolute;right: 20px; top: 15px;">

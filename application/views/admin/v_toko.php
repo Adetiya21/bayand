@@ -19,7 +19,7 @@
                     <i class="feather icon-layout bg-c-blue"></i>
                     <div class="d-inline">
                         <h5>Toko</h5>
-                        <span>Berikut data toko sewa teras Indomaret.</span>
+                        <span>Berikut daftar toko sewa teras Indomaret.</span>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                             <a href="<?= site_url('admin/toko') ?>">Toko</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="<?= site_url('admin/toko') ?>">Data Toko</a>
+                            <a href="<?= site_url('admin/toko') ?>">Daftar Toko</a>
                         </li>
                     </ul>
                 </div>
@@ -47,12 +47,12 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Data Toko</h5>
+                            <h5>Daftar Toko</h5>
                             <div class="card-header-right"> <ul class="list-unstyled card-option"> <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li> <li><i class="feather icon-maximize full-card"></i></li> <li><i class="feather icon-minus minimize-card"></i></li> <li><i class="feather icon-refresh-cw reload-card"></i></li> <li><i class="feather icon-trash close-card"></i></li> <li><i class="feather icon-chevron-left open-card-option"></i></li> </ul> </div>
                         </div>
                         <div style="position: absolute;right: 20px; top: 15px;">
-                            <button class="btn btn-primary btn-round" onclick="tambah()"><span class="fa fa-edit"></span> Tambah Data</button>   
-                        </div>
+							<button class="btn btn-primary btn-round" onclick="tambah()"><span class="fa fa-edit"></span> Input Data</button>	
+						</div>
                         
                         <div class="card-block">
                             <div class="dt-responsive">
@@ -63,6 +63,7 @@
                                         <th>Nama Toko</th>
                                         <th>Alamat Toko</th>
                                         <th>Harga Sewa</th>
+                                        <th>Kouta Sewa</th>
                                         <th width="10%">Action</th>
                                         </tr>
                                     </thead>
@@ -127,13 +128,14 @@
         {"data": "nama_toko"},
         {"data": "alamat_toko"},
         {"data": "harga_sewa"},
+        {"data": "kouta_sewa"}
         // {"data": "status","orderable": false},
         // {"data": "view","orderable": false}
         ],
         order: [[1, 'asc']],
         columnDefs: [
         {
-        "targets": 5,
+        "targets": 6,
         "render": function(data, type, row, meta){
           var link = "'"+row['kd_toko']+"'";
           var tombol = '<div align="center"> <a class="btn btn-warning btn-rounded btn-sm" href="javascript:void(0)" title="Edit" onclick="edit('+link+')"><i class="fa fa-edit"></i></a> <a class="btn btn-danger btn-rounded btn-sm" href="javascript:void(0)" title="Hapus" onclick="hapus('+link+')" ><i class="fa fa-trash"></i></a> </div>';
@@ -212,6 +214,7 @@
                 $('[name="nama_toko"]').val(data.nama_toko);
                 $('[name="alamat_toko"]').val(data.alamat_toko);
                 $('[name="harga_sewa"]').val(data.harga_sewa);
+                $('[name="kouta_sewa"]').val(data.kouta_sewa);
                 $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Data Toko'); // Set title to Bootstrap modal title
             },
@@ -318,6 +321,11 @@
                                 <div class="form-group">
                                     <label >Alamat Toko</label>
                                     <textarea name="alamat_toko" class="form-control"></textarea>
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label >Kouta Toko</label>
+                                    <input type="number"class="form-control" min="2" max="4" name="kouta_sewa">
                                     <span class="help-block"></span>
                                 </div>
                             </div>

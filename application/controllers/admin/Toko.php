@@ -57,7 +57,8 @@ class Toko extends CI_Controller {
 					'kd_toko' => $this->input->post('kd_toko'),
 					'nama_toko' => $this->input->post('nama_toko'),
 					'alamat_toko' => $this->input->post('alamat_toko'),
-					'harga_sewa' => $this->input->post('harga_sewa')
+					'harga_sewa' => $this->input->post('harga_sewa'),
+					'kouta_sewa' => $this->input->post('kouta_sewa')
 				);
 				$this->DButama->AddDB($this->table,$data);
 				echo json_encode(array("status" => TRUE));
@@ -94,13 +95,14 @@ class Toko extends CI_Controller {
 			$where  = array('kd_toko' => $this->input->post('kd_toko'));
 			$query = $this->DButama->GetDBWhere($this->table,$where);
 			$row = $query->row();
-			$data = array(
-					'nama_toko' => $this->input->post('nama_toko'),
-					'alamat_toko' => $this->input->post('alamat_toko'),
-					'harga_sewa' => $this->input->post('harga_sewa')
-				);
-				$this->DButama->UpdateDB($this->table,$where,$data);
-				echo json_encode(array("status" => TRUE));
+			$data = array(	
+				'nama_toko' => $this->input->post('nama_toko'),
+				'alamat_toko' => $this->input->post('alamat_toko'),
+				'harga_sewa' => $this->input->post('harga_sewa'),
+				'kouta_sewa' => $this->input->post('kouta_sewa')
+			);
+			$this->DButama->UpdateDB($this->table,$where,$data);
+			echo json_encode(array("status" => TRUE));
 		}
 
 	}

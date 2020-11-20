@@ -91,6 +91,7 @@ class Sewa extends CI_Controller {
 	//edit
 	public function edit($id)
 	{
+		
 		$cek = $this->DButama->GetDBWhere($this->tableuser,array('id'=> $this->session->userdata('id')));
 		if ($cek->num_rows() == 1) {
 			$cek1 = $this->DButama->GetDBWhere($this->table,array('id'=> $id));
@@ -119,7 +120,7 @@ class Sewa extends CI_Controller {
 		$tgl_sewa = $this->input->post('tgl_sewa');
         $tgl_sewa = date('Y-m-d', strtotime($tgl_sewa));
         $tgl_selesai = $this->input->post('tgl_selesai');
-        $tgl_selesai = date('Y-d-m', strtotime($tgl_selesai));
+        // $tgl_selesai = date('Y-d-m', strtotime($tgl_selesai));
 		$data = array(
 			'id_pendaftar' => $this->input->post('id_pendaftar'),
 			'kd_toko' => $this->input->post('kd_toko'),

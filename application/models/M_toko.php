@@ -6,7 +6,7 @@ class M_toko extends CI_Model {
 	var $table = 'tb_toko';
 
 	public function json() {
-		$this->datatables->select('kd_toko,nama_toko,alamat_toko,
+		$this->datatables->select('kd_toko,nama_toko,alamat_toko,kouta_sewa,
 			CONCAT("Rp. ", harga_sewa) as harga_sewa');
 		$this->datatables->from($this->table);
 		return $this->datatables->generate();

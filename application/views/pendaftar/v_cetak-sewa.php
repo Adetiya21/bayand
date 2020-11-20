@@ -85,24 +85,15 @@
 								<u>Pihak Pertama</u>
 								<div class="form-group row">
 									<label class="col-sm-4 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">Nama</label>
-									<?php foreach ($officer->result() as $key) { 
-										if ($sewa->id_officer === NULL) { 
-											echo "-";} 
-										else { if ($sewa->id_officer == $key->nik) { ?>
-									<label class="col-sm-8 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">: <b style="font-weight: bold;"><?= $key->nama ?></b></label>
-									<?php }}} ?>
+									<label class="col-sm-8 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">: <b style="font-weight: bold;">Slamet Rianto</b></label>
+									
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-4 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">Alamat Sekarang</label>
-									<?php foreach ($officer->result() as $key) { 
-										if ($sewa->id_officer === NULL) { 
-											echo "-";} 
-										else { if ($sewa->id_officer == $key->nik) { ?>
-									<label class="col-sm-8 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">: <b style="font-weight: bold;"><?= $key->alamat ?></b></label>
-									<?php }}} ?>
+									<label class="col-sm-8 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">: <b style="font-weight: bold;">Jl. Ya'm Sabran Ruko Anggrek blok H15-18</b></label>
 								</div>
 								<div class="form-group row">
-									<label class="col-sm-12 col-form-label" style="margin-bottom: -15px; font-size:0.9em;">Dalam hal ini bertindak lam kedudukannya selaku DBM, dari dan oleh karena itu, untuk dan atas nama serta sah dan berwenang mewakili <b style="font-weight: bold;">PT. INDOMARCO PRISMATAMA</b>.</label>
+									<label class="col-sm-12 col-form-label" style="margin-bottom: -15px; font-size:0.9em;">Dalam hal ini bertindak lam kedudukannya selaku ADM, dari dan oleh karena itu, untuk dan atas nama serta sah dan berwenang mewakili <b style="font-weight: bold;">PT. INDOMARCO PRISMATAMA</b>.</label>
 								</div>
 								<u>Pihak Kedua</u>
 								<div class="form-group row">
@@ -157,14 +148,18 @@
 									<label class="col-sm-8 col-form-label" style="margin-bottom: -30px; font-size:0.9em;">: <b style="font-weight: bold;"><?= $sewa->tgl_selesai ?></b></label>
 								</div>
 								<div class="form-group row">
-									<label class="col-sm-4 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">Biaya Sewa Perbulan</label>
+									<label class="col-sm-4 col-form-label" style="margin-bottom: -30px; font-size:0.9em;">Biaya Sewa Perbulan</label>
 									<?php foreach ($toko->result() as $key) { if ($sewa->kd_toko == $key->kd_toko) { ?>
-									<label class="col-sm-8 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $key->harga_sewa ?></b></label>
+									<label class="col-sm-8 col-form-label" style="margin-bottom: -30px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $key->harga_sewa ?></b></label>
 									<?php }} ?>
 								</div>
 								<div class="form-group row">
+									<label class="col-sm-4 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">Biaya Tambahan</label>
+									<label class="col-sm-8 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $sewa->t_biaya ?></b></label>
+								</div>
+								<div class="form-group row">
 									<label class="col-sm-4 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">Total Biaya Sewa</label>
-									<label class="col-sm-8 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $sewa->total ?></b></label>
+									<label class="col-sm-8 col-form-label" style="margin-bottom: -25px; font-size:0.9em;">: <b style="font-weight: bold;">Rp. <?= $sewa->total+$sewa->t_biaya ?></b></label>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-4 col-form-label" style="margin-bottom: -10px; font-size:0.9em;">Pembayaran</label>
@@ -184,7 +179,7 @@
 									<?php foreach ($officer->result() as $key) { 
 										if ($sewa->id_officer === NULL) { 
 											echo "-";} 
-										else { if($sewa->id_officer==$key->nik){ echo $key->nama; }}} ?><br>(DBM OPR)
+										else { if($sewa->id_officer==$key->nik){ echo $key->nama; }}} ?><br>(ADM OPR)
 								</div>
 								<div class="col-sm-6" style="font-size: 0.9em;text-align: center;font-weight: bold">
 									Pihak Kedua<br>PEMILIK USAHA
