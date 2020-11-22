@@ -180,7 +180,7 @@
 						<div class="card-block">
 							<div class="form-group row" style="margin-top: -60px">
 								<label class="col-sm-3 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">Nomor</label>
-								<label class="col-sm-9 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">: <b style="font-weight: bold;">DEV/KSM/T2ST/PTK/XI/2019</b></label>
+								<label class="col-sm-9 col-form-label" style="margin-bottom: -35px; font-size:0.9em;">: <b style="font-weight: bold;">DEV/KSM/<?= $sewa->kd_toko ?>/PTK/XI/2019</b></label>
 							</div>
 							<div class="form-group row" style="margin-bottom: 8px">
 								<label class="col-sm-3 col-form-label" style="font-size:0.9em;">Tempat / Tanggal</label>
@@ -288,10 +288,7 @@
 								<div class="col-sm-6" style="font-size: 0.9em;text-align: center;font-weight: bold">
 									Pihak Pertama<br>PT.INDOMARCO PRISMATAMA
 									<br><br><br><br>
-									<?php foreach ($officer->result() as $key) { 
-										if ($sewa->id_officer === NULL) { 
-											echo "-";} 
-										else { if($sewa->id_officer==$key->nik){ echo $key->nama; }}} ?><br>(ADM OPR)
+									Slamet Rianto<br>(ODM OPR)
 								</div>
 								<div class="col-sm-6" style="font-size: 0.9em;text-align: center;font-weight: bold">
 									Pihak Kedua<br>PEMILIK USAHA
