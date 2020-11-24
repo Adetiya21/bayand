@@ -61,7 +61,8 @@ class Welcome extends CI_Controller {
 							$sess_data['username'] = $key->username;
 							$sess_data['id'] = $key->id;
 							$this->session->set_userdata($sess_data);
-							$this->session->unset_userdata('user_logged_in');
+							$this->session->unset_userdata('officer_logged_in');
+							$this->session->unset_userdata('admin_logged_in');
 							redirect('home', 'refresh');
 						}
 					}else{

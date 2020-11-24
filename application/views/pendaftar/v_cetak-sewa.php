@@ -171,7 +171,13 @@
 								Objek sewa akan digunakan oleh pihak kedua <b style="font-weight: bold"><?= $profil->nama ?></b> untuk keperluan berdagang :</label>
 								<h3>□ <?= $sewa->produk_jual ?></h3>
 							<label class="col-form-label" style="font-size:0.8em;text-align: justify;">
-								Segala kegiatan & surat menyurat untuk pihak kedua akan ditujukan ke alamat <b style="font-weight: bold">JL. DR Sutomo Pontianak</b>.<br>Demikian penjanjian ini dibuat oleh dan antara kedua pihak dalam 2 rangkap, bermaterai ditandatangni oleh kedua belah pihak, dan masing-masing rangkap mempunyai kekuatan hukum yang sama. <br><br>Jika masa sewa habis, etalase atau gerobak dan perlengkapan penyewa harus segera diambil dengan menyerahkan Foto Copy KTP max 1 minggu dari tanggal berakhir sewa. Jika adanya kehilangan Indomaret tidak bertanggung jawab. <br><br>Dengan ditandatangani perjanjian ini, kedua pihak dengan ini setuju untuk tunduk dan mengikat diri pada semua ketentuan dan syarat yang tercantum dalam ketentuan Umum Perjanjian Kemitraan dan Sewa Menyewa yang terlampir.</label>
+								Segala kegiatan & surat menyurat untuk pihak kedua akan ditujukan ke alamat Toko 
+								<b style="font-weight: bold">
+									<?php foreach ($toko->result() as $key) { if ($sewa->kd_toko == $key->kd_toko) { ?>
+										<?= $key->alamat_toko ?>
+									<?php }} ?>
+								</b>.
+								<br>Demikian penjanjian ini dibuat oleh dan antara kedua pihak dalam 2 rangkap, bermaterai ditandatangni oleh kedua belah pihak, dan masing-masing rangkap mempunyai kekuatan hukum yang sama. <br><br>Jika masa sewa habis, etalase atau gerobak dan perlengkapan penyewa harus segera diambil dengan menyerahkan Foto Copy KTP max 1 minggu dari tanggal berakhir sewa. Jika adanya kehilangan Indomaret tidak bertanggung jawab. <br><br>Dengan ditandatangani perjanjian ini, kedua pihak dengan ini setuju untuk tunduk dan mengikat diri pada semua ketentuan dan syarat yang tercantum dalam ketentuan Umum Perjanjian Kemitraan dan Sewa Menyewa yang terlampir.</label>
 							<div class="row">
 								<div class="col-sm-6" style="font-size: 0.9em;text-align: center;font-weight: bold">
 									Pihak Pertama<br>PT.INDOMARCO PRISMATAMA

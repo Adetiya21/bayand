@@ -53,7 +53,8 @@ class Welcome extends CI_Controller {
 							$sess_data['nama'] = $key->nama;
 							$sess_data['nik'] = $key->nik;
 							$this->session->set_userdata($sess_data);
-							$this->session->unset_userdata('user_logged_in');
+							$this->session->unset_userdata('dftr_logged_in');
+							$this->session->unset_userdata('admin_logged_in');
 							redirect('officer/home', 'refresh');
 						}
 					}else{
